@@ -19,7 +19,7 @@ const slides = [
 
 const liste = document.createElement("ul");
 
-for (var i = 0; i < slides.length; i++){
+for (let i = 0; i < slides.length; i++){
 
 	var elemListe = document.createElement("li");
 	elemListe.classList.add("dot");
