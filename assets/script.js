@@ -17,60 +17,68 @@ const slides = [
 	}
 ]
 
-var liste = document.createElement("ul");
+const liste = document.createElement("ul");
 
 for (var i = 0; i < slides.length; i++){
 
 	var elemListe = document.createElement("li");
 	elemListe.classList.add("dot");
+	elemListe.id = i;
 	liste.appendChild(elemListe);
 }
 document.querySelector("#banner .dots").append(liste);
 
-var i = 0;
-liste.children[i].classList.add("dot_selected");
+liste.children[0].classList.add("dot_selected");
 
-var fleche_gauche = document.querySelector("#banner .arrow_left");
-var fleche_droite = document.querySelector("#banner .arrow_right");
+const fleche_gauche = document.querySelector("#banner .arrow_left");
+const fleche_droite = document.querySelector("#banner .arrow_right");
 
 fleche_gauche.addEventListener("click", function(){
-	
-	console.log(fleche_gauche);
 
-	liste.children[i].classList.remove("dot_selected");
+	var slideSelected = document.querySelector(".dot_selected");
+	slideSelected.classList.remove("dot_selected");
 	
-	if(i == 0){
-		i = 3;
+	var i = 0;
+	if(slideSelected.id == 0){
+		
+		i = slides.length - 1;
 	}
 	else{
+		
+		i = slideSelected.id;
 		i--;
 	}
 	
 	liste.children[i].classList.add("dot_selected");
 
 	var image = document.querySelector("#banner .banner-img");
-	image.src = "./assets/images/slideshow/" + slides[i].image;
 	var texte = document.querySelector("#banner p");
+
+	image.src = "./assets/images/slideshow/" + slides[i].image;
 	texte.innerHTML = slides[i].tagLine;
 });
 
 fleche_droite.addEventListener("click", function(){ 
 	
-	console.log(fleche_droite);
+	var slideSelected = document.querySelector(".dot_selected");
+	slideSelected.classList.remove("dot_selected");
 	
-	liste.children[i].classList.remove("dot_selected");
-	
-	if(i == 3){
+	var i = 0;
+	if(slideSelected.id == 3){
+		
 		i = 0;
 	}
 	else{
+		
+		i = slideSelected.id;
 		i++;
 	}
 	
 	liste.children[i].classList.add("dot_selected");
 
 	var image = document.querySelector("#banner .banner-img");
-	image.src = "./assets/images/slideshow/" + slides[i].image;
 	var texte = document.querySelector("#banner p");
+
+	image.src = "./assets/images/slideshow/" + slides[i].image;
 	texte.innerHTML = slides[i].tagLine;
 });
