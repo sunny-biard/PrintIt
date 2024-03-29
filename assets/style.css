@@ -131,6 +131,15 @@ header {
 	position: absolute;
 	right: 10px;
 }
+
+#banner .arrow_left:hover {
+	cursor: pointer;
+}
+
+#banner .arrow_right:hover {
+	cursor: pointer;
+}
+
 /* Gestion des points du carrousel */
 .dots {
 	position: absolute;
@@ -151,6 +160,11 @@ header {
 	display: inline-block;
 	background-color: #fff;
 }
+
+.dot:hover {
+	cursor: pointer;
+}
+
 /* Fin du code CSS pour le carousel */
 #banner p {
 	font-family: 'Roboto Slab', sans-serif;
