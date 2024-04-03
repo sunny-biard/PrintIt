@@ -21,7 +21,7 @@ const liste = document.createElement("ul");
 
 for (let i = 0; i < slides.length; i++){
 
-	var elemListe = document.createElement("li");
+	const elemListe = document.createElement("li");
 	elemListe.classList.add("dot");
 	elemListe.id = i;
 	liste.appendChild(elemListe);
@@ -35,10 +35,10 @@ const fleche_droite = document.querySelector("#banner .arrow_right");
 
 fleche_gauche.addEventListener("click", function(){
 
-	var slideSelected = document.querySelector(".dot_selected");
+	let slideSelected = document.querySelector(".dot_selected");
 	slideSelected.classList.remove("dot_selected");
 	
-	var i = 0;
+	let i = 0;
 	if(slideSelected.id == 0){
 		
 		i = slides.length - 1;
@@ -51,8 +51,8 @@ fleche_gauche.addEventListener("click", function(){
 	
 	liste.children[i].classList.add("dot_selected");
 
-	var image = document.querySelector("#banner .banner-img");
-	var texte = document.querySelector("#banner p");
+	const image = document.querySelector("#banner .banner-img");
+	const texte = document.querySelector("#banner p");
 
 	image.src = "./assets/images/slideshow/" + slides[i].image;
 	texte.innerHTML = slides[i].tagLine;
@@ -60,10 +60,10 @@ fleche_gauche.addEventListener("click", function(){
 
 fleche_droite.addEventListener("click", function(){ 
 	
-	var slideSelected = document.querySelector(".dot_selected");
+	let slideSelected = document.querySelector(".dot_selected");
 	slideSelected.classList.remove("dot_selected");
 	
-	var i = 0;
+	let i = 0;
 	if(slideSelected.id == 3){
 		
 		i = 0;
@@ -76,8 +76,8 @@ fleche_droite.addEventListener("click", function(){
 	
 	liste.children[i].classList.add("dot_selected");
 
-	var image = document.querySelector("#banner .banner-img");
-	var texte = document.querySelector("#banner p");
+	const image = document.querySelector("#banner .banner-img");
+	const texte = document.querySelector("#banner p");
 
 	image.src = "./assets/images/slideshow/" + slides[i].image;
 	texte.innerHTML = slides[i].tagLine;
